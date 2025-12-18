@@ -1,0 +1,149 @@
+src/
+  -> assets/       → images, svg, static files
+  -> components/   → reusable pieces (buttons, layout wrappers)
+        layout/     → things like Navbar, Sidebar
+        ui/         → tiny reusable UI elements
+  -> pages/        → route-level components
+  -> services/     → API helpers like your axios instance
+  App.jsx       → main app shell + routes
+  main.jsx      → entry point that mounts React
+  index.css     → global styles + Tailwind imports
+
+
+* TAILWIND GUIDE:
+
+-> min-h-screen
+
+Tells the container:
+“Have at least the height of the entire viewport.”
+
+This ensures the background color covers 100% of the screen, even if there’s very little content.
+
+-> bg-gray-50 and dark:bg-gray-900
+
+These set background colors from Tailwind’s default palette.
+
+-> bg-gray-50 → very light gray
+-> dark:bg-gray-900 → near-black
+
+dark: prefix = applies when the page is in dark mode
+
+Dark mode in Tailwind is class-based by default. When your HTML tag has class="dark", all dark:* utilities kick in.
+
+-> text-gray-900 and dark:text-gray-100
+
+Same idea as background, but for text color.
+
+-> text-gray-900 → almost black text
+
+-> dark:text-gray-100 → very light text in dark mode
+This keeps reading contrast acceptable.
+
+Padding:
+
+
+-> p-4, p-6, p-3
+
+Padding classes.
+
+Tailwind’s spacing scale works like this:
+
+p-0 → 0px
+
+p-1 → 4px
+
+p-2 → 8px
+
+p-3 → 12px
+
+p-4 → 16px
+
+p-6 → 24px
+
+…and so on.
+
+
+You can also do side-specific ones:
+
+px-4 → padding left/right
+
+py-4 → padding top/bottom
+
+-> border-b
+
+A bottom border.
+Tailwind assumes:
+
+width: 1px
+
+style: solid
+
+color: current text color unless you specify otherwise
+
+Margin: 
+
+-> mr-4
+
+Margin-right of 1rem (16px).
+Useful to space nav links apart.
+
+-> text-2xl, text-xl
+
+Font size utilities.
+Tailwind sizes aren't just pixel values—they include line-height defaults too.
+
+For example:
+
+text-xl → 20px-ish
+text-2xl → 24px-ish
+
+Exact values depend on Tailwind’s theme.
+
+font-semibold
+
+Sets font-weight to around 600.
+Heavier than normal text but lighter than bold.
+
+-> mb-4, mb-3, mb-2
+
+Margin-bottom utilities.
+Good for stacking headings, cards, list items.
+
+bg-white
+
+White background. Useful for cards or containers that sit on a gray background.
+
+rounded
+
+Border-radius.
+Default is 0.25rem (4px).
+
+
+You also get:
+
+rounded-md
+rounded-lg
+rounded-full
+shadow
+
+A small box-shadow.
+
+
+Tailwind gives you several levels:
+
+shadow-sm
+shadow -> DEFAULT
+shadow-md
+shadow-lg
+
+shadow is the default moderate one.
+
+EXAMPLE:
+
+<div className="p-4 bg-white rounded shadow">
+Translated:
+
+Padding: 16px
+Background: white
+Corners: slightly rounded
+Shadow: small drop-shadow
